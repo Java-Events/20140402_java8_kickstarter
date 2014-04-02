@@ -48,19 +48,19 @@
             </dependency>
 
             <!-- Weld Container -->
-            <!--<dependency>-->
-                <!--<groupId>org.jboss.weld</groupId>-->
-                <!--<artifactId>weld-core-bom</artifactId>-->
-                <!--<version>2.1.0.Final</version>-->
-                <!--<type>pom</type>-->
-                <!--<scope>import</scope>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.jboss.weld.se</groupId>-->
-                <!--<artifactId>weld-se</artifactId>-->
-                <!--<version>2.1.0.Final</version>-->
-                <!--<scope>compile</scope>-->
-            <!--</dependency>-->
+            <dependency>
+                <groupId>org.jboss.weld</groupId>
+                <artifactId>weld-core-bom</artifactId>
+                <version>2.1.0.Final</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.weld.se</groupId>
+                <artifactId>weld-se</artifactId>
+                <version>2.1.0.Final</version>
+                <scope>compile</scope>
+            </dependency>
             <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
@@ -228,7 +228,7 @@
         </profile>
         <profile>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <id>arquillian_weld-ee-embedded-11</id>
             <dependencies>
@@ -365,9 +365,9 @@
         <url>http://www.rapidpm.org</url>
     </organization>
     <scm>
-        <url>http://stash.rapidpm.org/scm/kurse/kurs-java8</url>
-        <connection>scm:git:http://stash.rapidpm.org/scm/kurse/kurs-java8.git</connection>
-        <developerConnection>scm:git:http://stash.rapidpm.org/scm/kurse/kurs-java8.git</developerConnection>
+        <url>https://bitbucket.org/svenruppert/kurs_20140402_java8_kickstarter.git</url>
+        <connection>scm:git:https://bitbucket.org/svenruppert/kurs_20140402_java8_kickstarter.git</connection>
+        <developerConnection>scm:git:https://bitbucket.org/svenruppert/kurs_20140402_java8_kickstarter.git</developerConnection>
     </scm>
     <developers>
         <developer>
@@ -385,9 +385,6 @@
     <!--<ciManagement>-->
         <!--<system>Jenkins</system>-->
         <!--<url>http://jenkins.rapidpm.org/job/rapidpm-modules/</url>-->
-        <!--&lt;!&ndash;<notifiers>&ndash;&gt;-->
-        <!--&lt;!&ndash;<notifier></notifier>&ndash;&gt;-->
-        <!--&lt;!&ndash;</notifiers>&ndash;&gt;-->
     <!--</ciManagement>-->
     <licenses>
         <license>
