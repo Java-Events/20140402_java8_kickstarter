@@ -1,4 +1,4 @@
-package org.rapidpm.course.java8.lambdas.jdk8.v2.uebung;
+package org.rapidpm.course.java8.lambdas.jdk8.v2.uebung.legacy;
 
 /**
  * Created by Sven Ruppert on 02.04.2014.
