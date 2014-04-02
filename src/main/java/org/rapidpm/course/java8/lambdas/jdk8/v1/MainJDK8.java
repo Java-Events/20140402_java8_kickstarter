@@ -2,7 +2,7 @@ package org.rapidpm.course.java8.lambdas.jdk8.v1;
 import org.rapidpm.course.java8.lambdas.Message;
 
 /**
- * Created by ts40 on 01.04.2014.
+ * Created by Sven Ruppert on 01.04.2014.
  */
 public class MainJDK8 {
     public static void main(String[] args) {
