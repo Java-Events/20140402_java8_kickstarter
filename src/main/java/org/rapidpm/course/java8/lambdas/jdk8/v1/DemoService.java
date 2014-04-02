@@ -1,15 +1,16 @@
-package org.rapidpm.course.java8.lambdas.legacy;
+package org.rapidpm.course.java8.lambdas.jdk8.v1;
 
 import org.rapidpm.course.java8.lambdas.DemoAction;
 import org.rapidpm.course.java8.lambdas.DemoServiceInterface;
 import org.rapidpm.course.java8.lambdas.Message;
+import org.rapidpm.course.java8.lambdas.jdk8.v2.DemoServiceMixin;
 
 import java.util.LinkedList;
 
 /**
  * Created by Sven Ruppert on 01.04.2014.
  */
-public class DemoService implements DemoServiceInterface {
+public class DemoService implements DemoServiceInterface{
 
     private LinkedList<DemoAction> actionList = new LinkedList<>();
 
@@ -22,7 +23,6 @@ public class DemoService implements DemoServiceInterface {
         actionList.addLast(action);
     }
 
-
     @Override
     public void execute(Message msg) {
         for (DemoAction demoAction : actionList) {
@@ -33,8 +33,10 @@ public class DemoService implements DemoServiceInterface {
     @Override
     public void executeActionTwo(Message msg) {
         for (DemoAction demoAction : actionList) {
-            demoAction.executeActionTwo (msg);
+            demoAction.executeActionTwo(msg);
         }
     }
+
+
 
 }

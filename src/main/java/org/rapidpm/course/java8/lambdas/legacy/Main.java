@@ -5,7 +5,7 @@ import org.rapidpm.course.java8.lambdas.DemoServiceInterface;
 import org.rapidpm.course.java8.lambdas.Message;
 
 /**
- * Created by ts40 on 01.04.2014.
+ * Created by Sven Ruppert on 01.04.2014.
  */
 public class Main {
 
