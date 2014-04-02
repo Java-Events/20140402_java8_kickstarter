@@ -5,7 +5,7 @@ import java.time.MonthDay;
 import java.util.stream.IntStream;
 
 /**
- * Created by ts40 on 31.03.2014.
+ * Created by Sven Ruppert on 31.03.2014.
  */
 public class E_MonthDay {
     public static void main(String[] args) {

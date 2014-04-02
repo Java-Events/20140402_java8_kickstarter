@@ -4,7 +4,7 @@ import java.time.Month;
 import java.time.YearMonth;
 
 /**
- * Created by ts40 on 31.03.2014.
+ * Created by Sven Ruppert on 31.03.2014.
  */
 public class D_YearMonth {
     public static void main(String[] args) {

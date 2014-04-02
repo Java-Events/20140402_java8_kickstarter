@@ -7,7 +7,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * Created by ts40 on 01.04.2014.
+ * Created by Sven Ruppert on 01.04.2014.
  */
 public class R_LegacyCode {
     public static void main(String[] args) {

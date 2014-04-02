@@ -12,6 +12,19 @@ import java.time.temporal.TemporalAdjusters;
  */
 public class M_TemporalAdjuster {
 
+    final String demoString = "sssss";
+
+    final static TemporalAdjuster adjuster = temporal -> {
+        final LocalDate localDate = LocalDate.from(temporal);
+        final DayOfWeek dayOfWeek = localDate.getDayOfWeek();
+        if (dayOfWeek == DayOfWeek.SATURDAY || dayOfWeek == DayOfWeek.SUNDAY) {
+            final TemporalAdjuster next = TemporalAdjusters.next(DayOfWeek.MONDAY);
+            return temporal.with(next);
+        } else {
+            return temporal.with(localDate);
+        }
+    };
+
     public static void main(String[] args) {
         LocalDate date = LocalDate.of(2014, Month.APRIL, 3);
         DayOfWeek dotw = date.getDayOfWeek();
@@ -21,6 +34,11 @@ public class M_TemporalAdjuster {
 
         final LocalDate d1 = date.with(new MyTemporalAdjuster());
         System.out.println("d1 = " + d1);
+
+
+
+        final LocalDate d1x = date.with(adjuster);
+        System.out.println("d1x = " + d1x);
 
         final LocalDate dateSa = LocalDate.of(2014, Month.APRIL, 5);
         System.out.println("d2 = " + dateSa.with(new MyTemporalAdjuster()));

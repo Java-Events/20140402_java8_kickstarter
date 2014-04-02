@@ -9,7 +9,7 @@ import java.time.temporal.TemporalUnit;
 import java.util.List;
 
 /**
- * Created by ts40 on 31.03.2014.
+ * Created by Sven Ruppert on 31.03.2014.
  */
 public class O_Period_Duration {
     public static void main(String[] args) {

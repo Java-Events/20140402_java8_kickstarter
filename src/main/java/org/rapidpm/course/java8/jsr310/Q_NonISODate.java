@@ -6,7 +6,7 @@ import java.time.chrono.HijrahDate;
 import java.time.chrono.JapaneseDate;
 
 /**
- * Created by ts40 on 01.04.2014.
+ * Created by Sven Ruppert on 01.04.2014.
  */
 public class Q_NonISODate {
     public static void main(String[] args) {

@@ -5,7 +5,7 @@ import java.time.Instant;
 import java.time.ZoneId;
 
 /**
- * Created by ts40 on 01.04.2014.
+ * Created by Sven Ruppert on 01.04.2014.
  */
 public class P_Clock {
     public static void main(String[] args) {

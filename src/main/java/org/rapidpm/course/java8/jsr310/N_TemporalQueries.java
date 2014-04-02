@@ -8,7 +8,7 @@ import static java.time.LocalDate.of;
 import static java.time.Month.APRIL;
 
 /**
- * Created by ts40 on 31.03.2014.
+ * Created by Sven Ruppert on 31.03.2014.
  */
 public class N_TemporalQueries {
     public static void main(String[] args) {

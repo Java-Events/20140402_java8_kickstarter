@@ -5,7 +5,7 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Created by ts40 on 31.03.2014.
+ * Created by Sven Ruppert on 31.03.2014.
  */
 public class K_Parsing_Formatting {
     public static void main(String[] args) {
