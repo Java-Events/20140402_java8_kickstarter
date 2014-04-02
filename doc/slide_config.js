@@ -3,7 +3,7 @@ var SLIDE_CONFIG = {
   settings: {
     title: 'Java 8 <br> ready for the future',
     subtitle: 'Streams and Lambdas in real life',
-    eventTitle: 'bei der JUG XXX',
+    eventTitle: 'Java8 Kickstarter',
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true
     enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.
