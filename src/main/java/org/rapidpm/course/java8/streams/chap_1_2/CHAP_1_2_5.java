@@ -44,7 +44,7 @@ public class CHAP_1_2_5 {
                 .reduce("X_", (v1,v2)->{
 //                    System.out.println("v1 -> " + v1);
 //                    System.out.println("v2 -> " + v2);
-                    final String result = v1.concat(v2) + "_";
+                    final String result = v1.concat(v2) + "#";
                     System.out.println("v1 " + v1 + " plus v2_ " + v2 + "_ => " + result);
                     return result;
                 }));

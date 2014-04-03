@@ -2,6 +2,7 @@ package org.rapidpm.course.java8.streams.chap_1_3.uebung;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.rapidpm.course.java8.lambdas.jdk8.v2.uebung.Main;
@@ -10,6 +11,7 @@ import org.rapidpm.course.java8.streams.Pair;
 import org.rapidpm.course.java8.streams.WorkLoadGenerator;
 import org.rapidpm.course.java8.streams.chap_1_3.Worker;
 
+import static java.util.stream.Collectors.toList;
 import static org.rapidpm.course.java8.streams.chap_1_3.Worker.ANZAHL_KURVEN;
 
 /**
@@ -24,18 +26,22 @@ public class WorkerStreamJCB implements Worker {
 
     @Override
     public List<List<Double>> generateInterpolatedValues(List<List<Integer>> baseValues) {
-        return baseValues.parallelStream().map(valueList -> {
-            return generator.generate(valueList);
-        }).collect(Collectors.toList());
+        return baseValues.parallelStream()
+                .map(generator::generate)  //thread save ??
+                .collect(toList());
     }
 
     @Override
     public List<List<Integer>> generateDemoValueMatrix() {
-        final Stream.Builder<List<Integer>> builder = Stream.<List<Integer>>builder();
-        for (int i = 0; i < ANZAHL_KURVEN; i++) {
-            builder.add(valueGenerator.generateDemoValuesForY());
-        }
-        return builder.build().collect(Collectors.toList());
+//        final Stream.Builder<List<Integer>> builder = Stream.<List<Integer>>builder();
+//        for (int i = 0; i < ANZAHL_KURVEN; i++) {
+//            builder.add(valueGenerator.generateDemoValuesForY());
+//        }
+        return Stream
+                .generate(valueGenerator::generateDemoValuesForY)
+                .limit(ANZAHL_KURVEN)
+                .collect(Collectors.toList());
+//        return builder.build().collect(toList());
     }
 
 }

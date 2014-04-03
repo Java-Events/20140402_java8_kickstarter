@@ -32,7 +32,7 @@ public class Uebung_ts1_parallel implements Worker {
   public List<List<Integer>> generateDemoValueMatrix() {
     DemoValueGenerator valueGenerator = new DemoValueGenerator() {};
     return Stream
-            .generate(() -> valueGenerator.generateDemoValuesForY())
+            .generate(valueGenerator::generateDemoValuesForY)
             .limit(Worker.ANZAHL_KURVEN)
             .collect(Collectors.toList());
   }
@@ -41,7 +41,7 @@ public class Uebung_ts1_parallel implements Worker {
   public List<List<Double>> generateInterpolatedValues(List<List<Integer>> baseValues) {
     final WorkLoadGenerator generator = new WorkLoadGenerator();
     return baseValues.parallelStream()
-           .map((List<Integer> t) -> generator.generate(t))
+           .map(generator::generate) //thread save ??
            .collect(Collectors.toList());
   }
 
@@ -53,12 +53,12 @@ public class Uebung_ts1_parallel implements Worker {
     };
 
     List<List<Integer>> demoValueMatrix = Stream
-            .generate(() -> valueGenerator.generateDemoValuesForY())
+            .generate(valueGenerator::generateDemoValuesForY)
             .limit(Worker.ANZAHL_KURVEN)
             .collect(Collectors.toList());
 
     List<List<Double>> result = demoValueMatrix.parallelStream()
-            .map((List<Integer> t) -> generator.generate(t))
+            .map(generator::generate)
             .collect(Collectors.toList());
 
   }

@@ -73,15 +73,13 @@ public class CHAP_1_3 extends Application {
         lineChart.setTitle("Time used for Worker");
 
         final Scene scene = new Scene(lineChart, 800, 600);
-
-
         final ObservableList<XYChart.Series> data = lineChart.getData();
 
         data.add(createNextSeries("Serial", warmUp("Serial", new WorkerSerial())));
         data.add(createNextSeries("Threads", warmUp("Threads", new WorkerParallelThreads())));
         data.add(createNextSeries("ExecutorService", warmUp("ExecutorService", new WorkerParallelExecutorService(executorService))));
-//        data.add(createNextSeries("Streams", warmUp("Streams", new WorkerParallelStreams())));
-//        data.add(createNextSeries("WorkerJDK8", warmUp("WorkerJDK8", new WorkerJDK8(){})));
+        data.add(createNextSeries("Streams", warmUp("Streams", new WorkerParallelStreams())));
+        data.add(createNextSeries("WorkerJDK8", warmUp("WorkerJDK8", new WorkerJDK8(){})));
 
         stage.setScene(scene);
         stage.show();

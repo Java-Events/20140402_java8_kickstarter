@@ -23,14 +23,13 @@ public class WorkerParallelStreams implements Worker{
 
     @Override
     public List<List<Double>> generateInterpolatedValues(List<List<Integer>> baseValues) {
-        final List<List<Double>> baseValueMatrix = generateDemoValueMatrix()
+        return baseValues
                 .parallelStream()
                 .map(v -> {
                     final WorkLoadGenerator generator = new WorkLoadGenerator();
                     return generator.generate(v);
                 })
                 .collect(Collectors.toList());
-        return baseValueMatrix;
     }
 
     public List<Integer> generateDemoValuesForY(){

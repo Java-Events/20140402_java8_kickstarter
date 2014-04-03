@@ -64,10 +64,6 @@ public class WorkerParallelExecutorService implements Worker {
             e.printStackTrace();
         }
         return result;
-
-
-
-
     }
 
 
