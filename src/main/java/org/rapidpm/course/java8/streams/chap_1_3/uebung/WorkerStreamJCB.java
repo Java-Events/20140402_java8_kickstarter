@@ -1,4 +1,4 @@
-package org.rapidpm.course.java8.streams.chap_1_3;
+package org.rapidpm.course.java8.streams.chap_1_3.uebung;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,8 @@ import org.rapidpm.course.java8.lambdas.jdk8.v2.uebung.Main;
 import org.rapidpm.course.java8.streams.DemoValueGenerator;
 import org.rapidpm.course.java8.streams.Pair;
 import org.rapidpm.course.java8.streams.WorkLoadGenerator;
+import org.rapidpm.course.java8.streams.chap_1_3.Worker;
+
 import static org.rapidpm.course.java8.streams.chap_1_3.Worker.ANZAHL_KURVEN;
 
 /**
