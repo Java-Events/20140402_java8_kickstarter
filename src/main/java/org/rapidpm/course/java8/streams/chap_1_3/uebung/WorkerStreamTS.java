@@ -32,7 +32,7 @@ public class WorkerStreamTS implements Worker {
   public List<List<Integer>> generateDemoValueMatrix() {
     DemoValueGenerator valueGenerator = new DemoValueGenerator() {};
     return Stream
-            .generate(() -> valueGenerator.generateDemoValuesForY())
+            .generate(valueGenerator::generateDemoValuesForY)
             .limit(Worker.ANZAHL_KURVEN)
             .collect(Collectors.toList());
   }
@@ -41,7 +41,7 @@ public class WorkerStreamTS implements Worker {
   public List<List<Double>> generateInterpolatedValues(List<List<Integer>> baseValues) {
     final WorkLoadGenerator generator = new WorkLoadGenerator();
     return baseValues.parallelStream()
-           .map((List<Integer> t) -> generator.generate(t))
+           .map(generator::generate) //thread save ??
            .collect(Collectors.toList());
   }
 
