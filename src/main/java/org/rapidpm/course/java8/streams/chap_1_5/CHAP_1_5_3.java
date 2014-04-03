@@ -18,5 +18,44 @@ public class CHAP_1_5_3 {
 
         matrix.forEach(System.out::println);
 
+        final Integer s = matrix.stream()
+                .map(l -> l.stream()
+                        .filter(v -> v.equals(66))
+                        .findFirst().orElse(null))
+                .filter(f -> f != null)
+                .findFirst().orElse(null);
+        System.out.println("s = " + s);
+
+        Integer result = null;
+        endPos:
+        for (final List<Integer> integers : matrix) {
+            for (final Integer integer : integers) {
+                if(integer.equals(66)){
+                    result = integer;
+                    break endPos;
+                }
+            }
+        }
+        System.out.println("result " + result);
+
     }
+
+    //        final String s = matrix.stream()
+//                .map((l -> l.stream()
+//                        .filter(v -> {
+//                            System.out.println("v = " + v);
+//                            return v.equals(66);
+//                        })
+//                        .findFirst()
+//                        .map(m -> {
+//                            System.out.println("m = " + m);
+//                            return m.toString() + "XX";
+//                        }).orElse(null)
+//
+//
+//                ))
+//                .filter(f->f != null)
+//                .findFirst()
+//                .orElse("yy");
+
 }
