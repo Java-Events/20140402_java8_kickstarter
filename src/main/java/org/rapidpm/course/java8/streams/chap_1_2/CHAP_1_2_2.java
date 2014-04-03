@@ -19,8 +19,10 @@ public class CHAP_1_2_2 {
         final Stream<DemoElement> demoElementStream = getDemoElementStream(generateDemoValues);
 
 
-        final Stream<String> stringStream = getDemoElementStream(generateDemoValues).map(v -> v.getValue());
-        final Stream<String> stringStreamShort = getDemoElementStream(generateDemoValues).map(DemoElement::getValue);
+        final Stream<String> stringStream = getDemoElementStream(generateDemoValues)
+                .map(v -> v.getValue());
+        final Stream<String> stringStreamShort = getDemoElementStream(generateDemoValues)
+                .map(DemoElement::getValue);
 
         //map from Point to DemoElements to Strings
         final List<String> stringList = generateDemoValues.stream().map(v -> {
@@ -29,9 +31,11 @@ public class CHAP_1_2_2 {
             d.setDatum(new Date());
             d.setValue(Base64.getEncoder().encodeToString(value.getBytes()));
             return d;
-        }).map(DemoElement::getValue).collect(Collectors.toList());
+        })
+                .map(DemoElement::getValue).collect(Collectors.toList());
 
-        final Stream<Pair> filteredPairStream = generateDemoValues.stream().filter(v -> v.getId() % 2 == 0);
+        final Stream<Pair> filteredPairStream = generateDemoValues
+                .stream().filter(v -> v.getId() % 2 == 0);
 
     }
 
